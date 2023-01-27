@@ -5,15 +5,21 @@
 
 ## Description
 
-This project aims to compare two diffrent logistic regression models. One trains with imbalanced data and one used random oversampling with the goal of finding out differences in their respecitive predictive performances. The dataset is viewed below.
-![application screenshot](/Images/logistic_data.png)
+This project aims to compare multiple deep neural networks to try and predict if a company will be successful if funded by a venture capital firm. These different models are binary classification models and are evaluated on their accuracy. I started by collecting the data then one-hot encoding the non-numeric data, splitting the data and then scaling the data.
+![application screenshot](/Images/scaled_data.png)
 
-After doing predictive analysis using both models, we found accuracy scores for the two types of models:
-  * Imbalanced Data Balanced Accuracy Score: ~95%
-  * Randomly Oversampled Data Balanced Accuracy Score: ~99%
+Then, I define the first model by using all features:
+![application screenshot](Images/sequential.png)
 
-From looking at this, we can understand that using the Random Oversampling model is better than the alternative method we compared.
+Then I try and optimize the first model by adding hidden layers.
+![application screenshot](Images/sequential1.png)
 
+The results are as follows:
+  Original: Accuracy: 73%. Loss: 0.5579
+  Alternative 1: Accuracy: 73.34%. Loss: 0.5653
+  Alternative 2: Accuracy: 72.84%. Loss: 0.5531
+
+As we can see, adding more and more layers didn't drastically improve the accuracy.
 
 ## Table of Contents
 
@@ -48,6 +54,10 @@ From looking at this, we can understand that using the Random Oversampling model
 
   * [NumPy](https://numpy.org/) - *version 1.24.0*- Provides tools when dealing with classification with imbalanced classes
 
+  * [TensorFlow](https://www.tensorflow.org/) -*version 2.0.0*- Deep neural network creation
+
+  * [Keras](https://keras.io/) -*version 2.9.0*- Deep neural network creation
+
 
 ## 2. Usage
 
@@ -60,6 +70,8 @@ From looking at this, we can understand that using the Random Oversampling model
       pip install scikit-learn
       pip install imbalanced-learn
       pip install numpy
+      pip install tensorflow
+      pip install keras
 
       ```
 
@@ -70,7 +82,7 @@ From looking at this, we can understand that using the Random Oversampling model
 
 	MIT License
 
-  Copyright (c) 2022 Keenan Heller
+  Copyright (c) 2023 Keenan Heller
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -104,7 +116,7 @@ From looking at this, we can understand that using the Random Oversampling model
 ## 6. Deployment
 
   + There is currently no live deployment of this notebook on a common server, but the user has the ability to run this notebook locally on their machine via:
-    + `Jupyter Lab`: Navigate to root of the directory and type "jupyter lab credit_risk_resampling.ipynb".
+    + `Jupyter Lab`: Navigate to root of the directory and type "jupyter lab venture_funding_with_deep_learning.ipynb".
 
 
 ## 7. Contact
